@@ -1,0 +1,37 @@
+<div class="grid-container">
+  
+  <div style= "position: absolute; color: #041131;">
+  <img src="\assets\Hi John!.png" alt="HTML5 Icon" style="position: relative;bottom:30px;">
+  
+  </div>
+  <div  >
+  <mat-grid-list  cols=4 rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <!-- <mat-icon>more_vert</mat-icon> -->
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="image-container">
+            <img  style="max-width:400px;" [src]="card.image"/>
+            
+          </div>
+        </mat-card-content>
+        <md-card-actions fxLayout="row" fxLayoutAlign="end center">
+          
+        </md-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+</div>

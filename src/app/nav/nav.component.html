@@ -1,0 +1,52 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+
+    <img src="assets\Vector (Stroke) (2).png" alt="HTML5 Icon" style="height: 25px;
+    width: 28px;
+    left: 20px;
+    top: 11px;
+    border-radius: 0px;
+    position: absolute;">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" style="top:50px;color:white;">Home</a>
+      <img  src="assets\Vector.png" alt="HTML5 Icon" style="height: 18.24603271484375px;
+      width: 18.700000762939453px;
+      left: 30.149658203125px;
+      top: 172.6039581298828px;
+      border-radius: 0px;position: absolute;">
+      <img src="assets\Vector (4).png" alt="HTML5 Icon" style="position: absolute;
+      left: 40.5%;
+      right: 48.33%;
+      top: 26.33%;
+      bottom: 12.5%;
+      border: 2px solid;">
+      <img src="assets\Rectangle 294 (Stroke).png" alt="HTML5 Icon" style="position: absolute;
+      width: 18.7px;
+      height: 17.47px;
+      left: 31.15px;
+      top: 300.15px;">
+
+
+      <img src="assets\Vector (3).png" alt="HTML5 Icon" style="position: absolute;
+      width: 19.7px;
+      height: 19.7px;
+      left: 30.15px;
+      top: 363.15px;">
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Ecommerce</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
